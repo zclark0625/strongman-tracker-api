@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "allowJs": false,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "outDir": "./out/ts/",
+        "removeComments": true
+    },
+    "exclude": ["node_modules", "spec"]
+}
