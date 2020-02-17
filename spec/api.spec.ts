@@ -1,12 +1,12 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const request = require("supertest");
-import app from "../src/app";
+import api from "../src/api";
 
-describe("app", () => {
+describe("api", () => {
     describe("GET /", () => {
-        it("returns hello world", (done) => {
-            request(app)
-                .get("/")
+        it("should return hello world", (done) => {
+            request(api)
+                .get("/api/")
                 .expect(200, "Hello World!", done);
         });
     });

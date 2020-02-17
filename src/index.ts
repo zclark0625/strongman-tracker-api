@@ -1,5 +1,5 @@
-import app from "./app";
+import api from "./api";
 
 const port = 8080;
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+api.listen(port, () => console.log(`Strongman Tracker API listening on port ${port}!`));
