@@ -1,4 +1,4 @@
-import api from "../src/api";
+import api from "../../src/api";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const request = require("supertest");
