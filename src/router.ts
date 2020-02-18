@@ -1,6 +1,6 @@
 import express from "express";
 import { Response, Request } from "express";
-import maxController from "./controllers/max";
+import maxController from "./max/controller";
 
 const router = express.Router();
 

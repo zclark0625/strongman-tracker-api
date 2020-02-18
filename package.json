@@ -7,10 +7,10 @@
         "test": "jest"
     },
     "dependencies": {
+        "@typegoose/typegoose": "^6.3.2",
         "express": "^4.17.1",
         "mongoose": "^5.9.1",
         "ts-node": "^8.6.2",
-        "typegoose": "^5.9.1",
         "typescript": "^3.7.5"
     },
     "devDependencies": {
