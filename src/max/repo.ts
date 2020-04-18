@@ -1,13 +1,16 @@
-import { Max, MaxSchema } from "./schema";
+import { MaxModel, Max } from "./schema";
 
 class MaxRepo {
-    public constructor() {
-        Max.create({deadlift1RM: 400} as MaxSchema);
+    public async index(): Promise<Max[]> {
+        return MaxModel.find({});
     }
 
-    public index = () => {
-        console.log(Max.find());
-        return Max.find();
+    public async create(max: Max): Promise<Max | undefined> {
+        let ret: undefined | Max = undefined;
+        await MaxModel.create(max)
+            .then(product => ret = product)
+            .catch(err => console.error("Max Save Failed with error: ", err));
+        return ret;
     }
 }
 

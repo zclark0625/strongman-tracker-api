@@ -1,8 +1,8 @@
 import { getModelForClass, prop } from "@typegoose/typegoose";
 
-export class MaxSchema {
+export class Max {
     @prop()
     public deadlift1RM?: number;
 }
 
-export const Max = getModelForClass(MaxSchema);
+export const MaxModel = getModelForClass(Max);

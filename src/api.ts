@@ -1,8 +1,8 @@
 import express from "express";
-import router from "./router";
+import maxController from "./max/controller";
 
 const api = express();
 
-api.use("/api", router);
+api.use("/api", maxController);
 
 export default api;
