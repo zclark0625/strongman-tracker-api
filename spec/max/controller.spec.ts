@@ -1,5 +1,6 @@
 import request from "supertest";
 import api from "../../src/api";
+import { fakeMax } from "../fakeData";
 
 jest.mock("../../src/max/service", () => {
     return jest.fn().mockImplementation(() => ({
@@ -23,8 +24,8 @@ describe("maxController", () => {
         it("should add max in body to repo", async (done) => {
             request(api)
                 .post("/api/max")
-                .send({deadlift1RM: 225})
-                .expect(200, {deadlift1RM: 225}, done);
+                .send(fakeMax)
+                .expect(200, JSON.stringify(fakeMax), done);
         });
     });
 });

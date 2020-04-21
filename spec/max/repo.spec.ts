@@ -1,10 +1,10 @@
 import { DocumentType } from "@typegoose/typegoose";
 import MaxRepo from "../../src/max/repo";
 import { Max, MaxModel } from "../../src/max/schema";
+import { fakeMax } from "../fakeData";
 
 describe("MaxRepo", () => {
     const repo = new MaxRepo();
-    const fakeMax = {deadlift1RM: 400};
 
     beforeEach(() => {
         jest.resetAllMocks();
