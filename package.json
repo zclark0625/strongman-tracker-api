@@ -3,8 +3,9 @@
     "version": "0.1.0",
     "license": "MIT",
     "scripts": {
-        "dev": "./scripts/startLocally.sh",
-        "start": "nodemon",
+        "deploy": "git push heroku master",
+        "dev": "docker start tracker-mongo && nodemon",
+        "start": "tsc && node ./out/ts/index.js",
         "test": "jest"
     },
     "dependencies": {
