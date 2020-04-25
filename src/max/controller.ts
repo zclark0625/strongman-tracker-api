@@ -6,7 +6,8 @@ import MaxService from "./service";
 const maxController = express();
 
 maxController.use(express.json());
-maxController.use(cors());
+
+if (process.env.CLIENT_ORIGIN) maxController.use(cors({origin: process.env.CLIENT_ORIGIN}));
 
 // TODO: Implement singleton properly instead of this
 const maxService = new MaxService();
