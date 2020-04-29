@@ -1,5 +1,4 @@
-import express from "express";
-import { Response, Request } from "express";
+import express, { Response, Request } from "express";
 import MaxService from "./service";
 
 const maxController = express();
