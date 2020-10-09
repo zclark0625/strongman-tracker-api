@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import api from "./api";
 
 const port = process.env.PORT || 8080;
-const databaseURI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/tracker";
+const databaseURI = process.env.DB_URI || "mongodb://127.0.0.1:27017/tracker";
 
 mongoose.connect(
     databaseURI,
