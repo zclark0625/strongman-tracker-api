@@ -47,13 +47,7 @@
                 "typedefs": false
             }
         ],
-        "@typescript-eslint/ban-ts-ignore": "off",
-        "@typescript-eslint/prefer-readonly": ["error"],
-        "@typescript-eslint/interface-name-prefix": [
-            "error",
-            {
-                "prefixWithI": "always"
-            }
-        ]
+        "@typescript-eslint/ban-ts-comment": "off",
+        "@typescript-eslint/prefer-readonly": ["error"]
     }
 }
