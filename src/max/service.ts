@@ -10,7 +10,15 @@ class MaxService {
     }
 
     public async create(max: Max): Promise<Max | undefined> {
-        return await maxRepo.create(max);
+        let ret;
+        // Catching and rethrowing seems to be the only way to get a repo error to pass up to the controller
+        // eslint-disable-next-line no-useless-catch
+        try {
+            ret = await maxRepo.create(max);
+        } catch (e) {
+            throw e;
+        }
+        return ret;
     }
 }
 

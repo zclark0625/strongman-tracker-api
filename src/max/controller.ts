@@ -15,7 +15,7 @@ maxController.get("/maxes", async (req: Request, res: Response) => {
     try {
         res.send(await maxService.index());
     } catch (e) {
-        res.status(500);
+        res.status(500).send();
     }
 });
 
@@ -24,7 +24,11 @@ maxController.post("/max", async (req: Request, res: Response) => {
         const product = await maxService.create(req.body);
         res.send(product);
     } catch (e) {
-        res.status(500);
+        if (e.name === "ValidationError") {
+            res.status(400).send("Max Misshapen");
+        } else {
+            res.status(500).send();
+        }
     }
 });
 

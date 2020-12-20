@@ -1,3 +1,4 @@
+import { logError } from "../utils";
 import { MaxModel, Max } from "./schema";
 
 class MaxRepo {
@@ -6,11 +7,12 @@ class MaxRepo {
     }
 
     public async create(max: Max): Promise<Max | undefined> {
-        let ret: undefined | Max = undefined;
-        await MaxModel.create(max)
-            .then(product => ret = product)
-            .catch(err => console.error("Max Save Failed with error: ", err));
-        return ret;
+        try {
+            return await MaxModel.create(max);
+        } catch (error) {
+            logError(error, "Max Create Failed");
+            throw error;
+        }
     }
 }
 
