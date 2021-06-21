@@ -1,6 +1,6 @@
-import { getModelForClass, prop } from "@typegoose/typegoose";
+import { DocumentType, getModelForClass, prop } from "@typegoose/typegoose";
 
-export class Max {
+export class MaxClass {
     @prop({required: true})
     public date!: Date;
 
@@ -14,4 +14,6 @@ export class Max {
     public press1RM?: number;
 }
 
-export const MaxModel = getModelForClass(Max);
+export type Max = MaxClass & DocumentType<MaxClass>;
+
+export const MaxModel = getModelForClass(MaxClass);
